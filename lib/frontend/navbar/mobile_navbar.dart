@@ -13,7 +13,6 @@ class MobileNavBar extends StatelessWidget {
       child: SizedBox(
         height: 80,
         width: width,
-        // color: Colors.yellow,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -48,19 +47,25 @@ class MobileNavBar extends StatelessWidget {
                       ),
                       AppTextButton(
                         text: 'Forum',
-                        onPressed: () {},
+                        onPressed: () {
+                          //TODO: Navigate to the forums page
+                        },
                         color: Colors.black,
                         size: 25,
                       ),
                       AppTextButton(
                         text: 'Help',
-                        onPressed: () {},
+                        onPressed: () {
+                          //TODO: Show the help popup
+                        },
                         color: Colors.black,
                         size: 25,
                       ),
                       AppTextButton(
                         text: 'Profile',
-                        onPressed: () {},
+                        onPressed: () {
+                          //TODO: Show the profile popup
+                        },
                         color: Colors.black,
                         size: 25,
                       ),
