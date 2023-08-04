@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:knustforum/body/body.dart';
 
+import '../body/body.dart';
 import '../navbar/navbar.dart';
 
 class HomePage extends StatelessWidget {

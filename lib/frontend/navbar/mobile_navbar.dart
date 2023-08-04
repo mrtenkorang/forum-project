@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:knustforum/frontend/widgets/small_text.dart';
-import 'package:knustforum/frontend/widgets/text_button.dart';
 
 class MobileNavBar extends StatelessWidget {
   final double width;
@@ -20,6 +19,7 @@ class MobileNavBar extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Icon(Icons.menu),
                   Row(
                     children: [
                       SizedBox(
@@ -34,40 +34,6 @@ class MobileNavBar extends StatelessWidget {
                         text: 'KNUST FORUM',
                         size: 30,
                         color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      AppTextButton(
-                        text: 'Home',
-                        onPressed: () {},
-                        color: Colors.black,
-                        size: 25,
-                      ),
-                      AppTextButton(
-                        text: 'Forum',
-                        onPressed: () {
-                          //TODO: Navigate to the forums page
-                        },
-                        color: Colors.black,
-                        size: 25,
-                      ),
-                      AppTextButton(
-                        text: 'Help',
-                        onPressed: () {
-                          //TODO: Show the help popup
-                        },
-                        color: Colors.black,
-                        size: 25,
-                      ),
-                      AppTextButton(
-                        text: 'Profile',
-                        onPressed: () {
-                          //TODO: Show the profile popup
-                        },
-                        color: Colors.black,
-                        size: 25,
                       ),
                     ],
                   ),

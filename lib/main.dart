@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:knustforum/frontend/forum/forum.dart';
 
-import 'frontend/pages/home_page.dart';
-
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(const KnustForum());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class KnustForum extends StatelessWidget {
+  const KnustForum({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme:
+            Theme.of(context).colorScheme.copyWith(secondary: Colors.green),
+        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Poppins'),
+        //useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const Forum(),
     );
   }
 }

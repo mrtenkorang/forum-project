@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:knustforum/frontend/navbar/dekstop_nav_bar.dart';
+import 'package:knustforum/frontend/navbar/tablet_nav_bar.dart';
 
 import 'mobile_navbar.dart';
 
@@ -12,7 +13,7 @@ class NavBar extends StatelessWidget {
       if (constraints.maxWidth >= 1200) {
         return DesktopNavBar(width: constraints.biggest.width);
       } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
-        return DesktopNavBar(width: constraints.biggest.width);
+        return TabletNavBar(width: constraints.biggest.width);
       } else {
         return MobileNavBar(
           width: constraints.biggest.width,

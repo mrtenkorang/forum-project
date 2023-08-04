@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:knustforum/body/tablet_body.dart';
+import 'package:knustforum/frontend/body/tablet_body.dart';
 
 import 'desktop_body.dart';
 import 'mobile_body.dart';
@@ -11,8 +11,11 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       if (constraints.maxWidth >= 1200) {
-        return DesktopBody(constraints.biggest.width);
-      } else if (constraints.maxWidth > 800 && constraints.maxWidth < 200) {
+        return DesktopBody(
+          width: constraints.biggest.width,
+          //height: constraints.biggest.height
+        );
+      } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
         return const TabletBody();
       } else {
         return const MobileBody();

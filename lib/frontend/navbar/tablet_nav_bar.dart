@@ -2,35 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:knustforum/frontend/widgets/small_text.dart';
 import 'package:knustforum/frontend/widgets/text_button.dart';
 
-class DesktopNavBar extends StatelessWidget {
+class TabletNavBar extends StatelessWidget {
   final double width;
-  const DesktopNavBar({Key? key, required this.width}) : super(key: key);
+  const TabletNavBar({Key? key, required this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 250, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
       child: SizedBox(
-        height: 80,
+        height: 120,
         width: width,
         // color: Colors.yellow,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     height: 80,
                     width: 50,
                     child: Image.asset('assets/images/knust_ghana.png'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  AppSmallText(
+                  const AppSmallText(
                     text: 'KNUST FORUM',
                     size: 30,
                     color: Colors.black,
@@ -38,6 +39,7 @@ class DesktopNavBar extends StatelessWidget {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AppTextButton(
                     text: 'Home',
