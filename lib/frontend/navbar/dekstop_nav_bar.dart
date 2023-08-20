@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:knustforum/backend/authentication/user_auth.dart';
 import 'package:knustforum/frontend/widgets/small_text.dart';
 import 'package:knustforum/frontend/widgets/text_button.dart';
 
@@ -58,8 +60,11 @@ class DesktopNavBar extends StatelessWidget {
                     size: 25,
                   ),
                   AppTextButton(
-                    text: 'Profile',
-                    onPressed: () {},
+                    text: 'Logout',
+                    onPressed: () async {
+                      await AuthService().logout();
+                      context.goNamed('/');
+                    },
                     color: Colors.black,
                     size: 25,
                   ),

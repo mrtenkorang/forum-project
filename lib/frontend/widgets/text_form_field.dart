@@ -8,6 +8,8 @@ class CustomTextField extends StatelessWidget {
   final TextCapitalization textCapitalization;
   final String? Function(String?)? validator;
   final Function()? onTap;
+  final IconData? icon;
+  final Color? iconColor;
   final bool obscure;
   const CustomTextField({
     Key? key,
@@ -19,6 +21,8 @@ class CustomTextField extends StatelessWidget {
     this.obscure = false,
     this.onTap,
     this.hintText,
+    this.icon,
+    this.iconColor,
   }) : super(key: key);
 
   @override
@@ -36,6 +40,10 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: const TextStyle(color: Colors.green),
+          icon: Icon(
+            icon,
+            color: iconColor,
+          ),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.green,

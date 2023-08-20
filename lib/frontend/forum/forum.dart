@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:knustforum/frontend/forum/tablet_view.dart';
 
 import 'desktop_forum_view.dart';
+import 'mobile_view.dart';
 
 class Forum extends StatelessWidget {
   const Forum({Key? key}) : super(key: key);
@@ -15,9 +17,9 @@ class Forum extends StatelessWidget {
             //height: constraints.biggest.height
           );
         } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
-          return const DesktopForum();
+          return TabletForum(width: constraints.biggest.width);
         } else {
-          return const DesktopForum();
+          return MobileForum(width: constraints.biggest.width);
         }
       }),
     );

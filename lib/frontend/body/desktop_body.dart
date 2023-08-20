@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../widgets/app_button.dart';
 import '../widgets/big_text.dart';
@@ -46,17 +47,9 @@ class DesktopBody extends StatelessWidget {
                   ),
                   AppButton(
                     onPressed: () {
-                      // user == null
-                      //     ? showDialog(
-                      //         context: context,
-                      //         builder: (BuildContext context) {
-                      //           return const LoginPopup();
-                      //         },
-                      //       )
-                      //     : GoRouter.of(context)
-                      //         .goNamed(AppRouteConstants.bookTicketName);
+                      context.goNamed('forum');
                     },
-                    buttonLabelText: 'Virtual Class Room',
+                    buttonLabelText: 'Forum',
                     textSize: 20,
                     textColor: Colors.white,
                     buttonHeight: 70,
@@ -85,7 +78,7 @@ class DesktopBody extends StatelessWidget {
           Container(
             height: 150,
             decoration: BoxDecoration(
-              color: Colors.yellow,
+              color: Colors.green,
               borderRadius: BorderRadius.circular(10),
             ),
           ),

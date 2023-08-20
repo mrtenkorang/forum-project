@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:knustforum/frontend/widgets/small_text.dart';
+import 'package:provider/provider.dart';
+
+import '../../../backend/models/users_model.dart';
 
 class ChatBubble extends StatelessWidget {
   final String text;
-  final bool isMe;
+  final String isMe;
+  final String userEmail;
   final DateTime timestamp;
 
-  ChatBubble({required this.text, required this.isMe, required this.timestamp});
+  const ChatBubble({
+    super.key,
+    required this.text,
+    required this.isMe,
+    required this.timestamp,
+    required this.userEmail,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final alignment = isMe ? Alignment.centerRight : Alignment.centerLeft;
-    final bubbleColor = isMe ? Colors.blue : Colors.grey[300];
+    final user = Provider.of<CustomUser>(context);
+    final alignment =
+        isMe == user.email ? Alignment.centerRight : Alignment.centerLeft;
+    final bubbleColor = isMe == user.email ? Colors.green : Colors.grey[300];
 
     return Align(
       alignment: alignment,
       child: Container(
-        padding: EdgeInsets.all(8.0),
-        margin: EdgeInsets.symmetric(vertical: 4.0),
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.symmetric(vertical: 4.0),
         decoration: BoxDecoration(
           color: bubbleColor,
           borderRadius: BorderRadius.circular(8.0),
@@ -24,15 +37,22 @@ class ChatBubble extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              text,
-              style: TextStyle(color: isMe ? Colors.white : Colors.black),
+            AppSmallText(
+              text: userEmail.split('@')[0],
+              size: 20,
+              fontWeight: FontWeight.bold,
             ),
-            SizedBox(height: 4.0),
-            Text(
-              formatDate(timestamp),
-              style: TextStyle(fontSize: 12.0, color: Colors.grey),
+            const SizedBox(
+              height: 5,
             ),
+            AppSmallText(
+                text: text,
+                color: isMe == user.email ? Colors.white : Colors.black),
+            const SizedBox(height: 4.0),
+            AppSmallText(
+                text: formatDate(timestamp),
+                size: 12.0,
+                color: isMe == user.email ? Colors.black : Colors.grey),
           ],
         ),
       ),
